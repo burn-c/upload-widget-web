@@ -1,15 +1,15 @@
-import * as Collapsible from "@radix-ui/react-collapsible";
-import { UploadWidgetDropzone } from "./upload-widget-dropzone";
-import { UploadWidgetHeader } from "./upload-widget-header";
-import { UploadWidgetUploadList } from "./upload-widget-upload-list";
-import { motion, useCycle } from "motion/react";
-import { UploadWidgetMinimizedButton } from "./upload-widget-minimized-button";
+import { UploadWidgetDropzone } from "./upload-widget-dropzone"
+import { UploadWidgetHeader } from "./upload-widget-header"
+import { UploadWidgetMinimizedButton } from "./upload-widget-minimized-button"
+import { UploadWidgetUploadList } from "./upload-widget-upload-list"
+import * as Collapsible from "@radix-ui/react-collapsible"
+import { motion, useCycle } from "motion/react"
 
 export function UploadWidget() {
-  const [isWidgetOpen, toggleWidgetOpen] = useCycle(false, true);
+  const [isWidgetOpen, toggleWidgetOpen] = useCycle(false, true)
 
   return (
-     <Collapsible.Root onOpenChange={() => toggleWidgetOpen()}>
+    <Collapsible.Root onOpenChange={() => toggleWidgetOpen()}>
       <motion.div
         className="bg-zinc-900 overflow-hidden w-[360px] rounded-xl shadow-shape"
         animate={isWidgetOpen ? "open" : "closed"}
@@ -45,5 +45,5 @@ export function UploadWidget() {
         </Collapsible.Content>
       </motion.div>
     </Collapsible.Root>
-  );
+  )
 }

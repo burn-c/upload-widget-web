@@ -1,5 +1,4 @@
-
-import { theme } from "tailwindcss/defaultConfig";
+import { theme } from "tailwindcss/defaultConfig"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -24,4 +23,4 @@ export default {
     },
   },
   plugins: [],
-};
+}

@@ -1,9 +1,8 @@
+import { Download, ImageUp, Link2, RefreshCcw, X } from "lucide-react"
 
-import * as Progress from "@radix-ui/react-progress";
-
-import { Download, ImageUp, Link2, RefreshCcw, X } from "lucide-react";
-import { motion } from "motion/react";
-import { Button } from "./ui/button";
+import { Button } from "./ui/button"
+import * as Progress from "@radix-ui/react-progress"
+import { motion } from "motion/react"
 
 export function UploadWidgetUploadItem() {
   return (
@@ -34,10 +33,7 @@ export function UploadWidgetUploadItem() {
       </div>
 
       <Progress.Root className="bg-zinc-800 rounded-full h-1 overflow-hidden">
-        <Progress.Indicator
-          className="bg-indigo-500 h-1"
-          style={{ width: "43%" }}
-        />
+        <Progress.Indicator className="bg-indigo-500 h-1" style={{ width: "43%" }} />
       </Progress.Root>
 
       <div className="absolute top-2.5 right-2.5 flex items-center gap-1">
@@ -62,5 +58,5 @@ export function UploadWidgetUploadItem() {
         </Button>
       </div>
     </motion.div>
-  );
+  )
 }
