@@ -25,16 +25,16 @@ O projeto fornece um widget de upload pronto para ser embutido em aplicações w
 Upload principal (arrastar/selecionar → compressão → upload → concluído):
 
 ```mermaid
-flowchart TD
-  A[Usuário arrasta / seleciona arquivo] --> B{É imagem?}
-  B -- Sim --> C[Compressão (compress-image)]
+graph TD
+  A[Usuario arrasta ou seleciona arquivo] --> B{É imagem?}
+  B -- Sim --> C[Compressão compress-image]
   B -- Não --> D[Usar arquivo original]
-  C --> E[Adicionar à fila de uploads (store)]
+  C --> E[Adicionar à fila de uploads store]
   D --> E
-  E --> F[Iniciar upload para storage (upload-file-to-storage)]
-  F --> G[Progresso atualizado (progress bar)]
+  E --> F[Iniciar upload para storage upload-file-to-storage]
+  F --> G[Progresso atualizado progress bar]
   G --> H{Upload bem-sucedido?}
-  H -- Sim --> I[Gerar URL de download (download-url) e marcar como concluído]
+  H -- Sim --> I[Gerar URL de download download-url e marcar como concluido]
   H -- Não --> J[Marcar erro e permitir re-tentativa]
 
 ```
@@ -43,16 +43,16 @@ Interação simplificada entre componentes:
 
 ```mermaid
 sequenceDiagram
-  participant U as Usuário
+  participant U as Usuario
   participant W as UploadWidget
   participant S as StoreUploads
   participant H as HTTP
-  U->>W: Seleciona/arrasta arquivo
-  W->>S: Adiciona item (pending)
+  U->>W: Seleciona ou arrasta arquivo
+  W->>S: Adiciona item pending
   W->>W: Chama compress-image
-  W->>H: POST -> upload-file-to-storage
-  H->>W: Resposta com status + URL
-  W->>S: Atualiza item (uploaded)
+  W->>H: POST para upload de arquivo
+  H->>W: Resposta com status e URL
+  W->>S: Atualiza item uploaded
 
 ```
 
