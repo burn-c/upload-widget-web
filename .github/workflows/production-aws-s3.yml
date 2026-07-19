@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
   
   # Se quiser manter os gatilhos automáticos (ex: push na main), basta deixá-los aqui:
-  push:
-    branches: [ main ]
+  # push:
+  #   branches: [ main ]
 
 env:
   AWS_S3_BUCKET_STATIC: burndev-upload-widget-web-static
