@@ -13,7 +13,7 @@ export function UploadWidgetTitle() {
           Subindo <span className="text-xs text-zinc-400 tabular-nums">{globalPercentage}%</span>
         </span>
       ) : (
-        <span>Faça o upload dos seus arquivos 😃😃</span>
+        <span>Faça o upload dos seus arquivos 🚀</span>
       )}
     </div>
   )
