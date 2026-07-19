@@ -33,7 +33,7 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
-      
+
       - name: Install vercel
         id: install-vercel
         run: |
@@ -42,14 +42,14 @@ jobs:
       - name: Pull vercel config
         id: pull-vercel-config
         run: |
-          vercel pull --yes --environment=production --token=${{ VERCEL_TOKEN }}
+          vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
 
       - name: Build app
         id: build-app
         run: |
-          vercel build --prod --token=${{ VERCEL_TOKEN }}
+          vercel build --prod --token="$VERCEL_TOKEN"
 
       - name: Deploy app
         id: deploy-app
         run: |
-          vercel deploy --prebuilt --prod --token=${{ VERCEL_TOKEN }}
+          vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
