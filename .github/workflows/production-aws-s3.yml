@@ -1,8 +1,13 @@
 name: Deploy to s3
+
 on:
+  # Permite que você rode esta pipeline manualmente na aba Actions
+  workflow_dispatch:
+  
+  # Se quiser manter os gatilhos automáticos (ex: push na main), basta deixá-los aqui:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
 env:
   AWS_S3_BUCKET_STATIC: burndev-upload-widget-web-static
   AWS_S3_BUCKET_CDN: burndev-upload-widget-web-cdn
