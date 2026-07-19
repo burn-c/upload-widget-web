@@ -1,4 +1,4 @@
-name: Deploy to s3
+name: Deploy to S3 PRODUCTION
 
 on:
   # Permite que você rode esta pipeline manualmente na aba Actions
@@ -12,6 +12,7 @@ env:
   AWS_S3_BUCKET_STATIC: burndev-upload-widget-web-static
   AWS_S3_BUCKET_CDN: burndev-upload-widget-web-cdn
   SOURCE_DIST: ./dist
+  VITE_DEPLOY_PROVIDER: AWS
 
 jobs:
   deploy:
